@@ -1,0 +1,12 @@
+.card {
+    cursor: pointer;
+    float: left;
+    margin: 15px;
+    padding: 20px;
+    width: 30%;
+    height: 200px;
+}
+
+h2 {
+    text-align: center;
+}

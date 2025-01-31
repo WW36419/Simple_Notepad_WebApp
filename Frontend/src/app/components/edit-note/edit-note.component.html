@@ -1,0 +1,14 @@
+<form [formGroup]="editForm" (ngSubmit)="sendEditedNote()">
+    <fieldset>
+        <legend>Edytuj notatkę:</legend>
+        <div class="input-group"><label for="title"></label>
+            <input type="text" class="form-control" id="title" formControlName="title" value="{{title}}">
+        </div>
+        <div class="input-group"><label for="content"></label>
+            <textarea id="content" class="form-control" formControlName="content" rows="5" cols="20" value="{{content}}"></textarea>
+        </div>
+        <div>
+            <button class="btn btn-primary" type="submit" [disabled]="!editForm.valid">Edytuj post</button>
+        </div>
+    </fieldset>
+</form>

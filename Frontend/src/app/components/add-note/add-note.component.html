@@ -1,0 +1,14 @@
+<form [formGroup]="noteForm" (ngSubmit)="sendNote()">
+    <fieldset>
+        <legend>Utwórz notatkę:</legend>
+        <div class="input-group"><label for="title"></label>
+            <input type="text" class="form-control" id="title" formControlName="title" placeholder="Title">
+        </div>
+        <div class="input-group"><label for="content"></label>
+            <textarea id="content" class="form-control" formControlName="content" rows="5" cols="20" placeholder="Content"></textarea>
+        </div>
+        <div>
+            <button class="btn btn-primary" type="submit" [disabled]="!noteForm.valid">Dodaj post</button>
+        </div>
+    </fieldset>
+</form>

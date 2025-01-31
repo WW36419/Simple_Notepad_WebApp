@@ -1,0 +1,22 @@
+<div class="card">
+    <h2>{{ title }}</h2>
+    <div class="card-body">
+        <p>{{ content }}</p>
+    </div> 
+</div>
+
+<form [formGroup]="shareForm" (ngSubmit)="sendShare()">
+    <fieldset>
+        <legend>Do kogo chcesz wysłać?</legend>
+        <div class="input-group"><label for="users"></label>
+            <select class="form-control" id="users" formControlName="recipientIds" size="4" multiple>
+                @for (user of users; track user.name) {
+                    <option value="{{user._id}}">{{user.name}}</option>
+                }
+            </select>
+        </div>
+        <div>
+            <button class="btn btn-primary" type="submit" [disabled]="!shareForm.valid">Udostępnij post</button>
+        </div>
+    </fieldset>
+</form>

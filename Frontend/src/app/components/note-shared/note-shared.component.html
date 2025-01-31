@@ -1,0 +1,33 @@
+<div>
+    @if (own_notes$.length === 0 && rec_notes$.length == 0) {
+        <h3>Nic jeszcze nie udostępniłeś!</h3>
+    }
+    @if (own_notes$.length > 0) {
+        <h3>Wysłane notatki:</h3>
+        @for (item of own_notes$; track item) {
+            @if (item !== null) {
+                <note-shared-item
+                    [noteId]="item._id"
+                    [ownerId]="item.userId"
+                    [title]="item.title"
+                    [content]="item.content"
+                    [shareType]="'owner'">
+                </note-shared-item>
+            }
+        }
+    }
+    @if (rec_notes$.length > 0) {
+        <h3>Notatki innych użytkowników:</h3>
+        @for (item of rec_notes$; track item) {
+            @if (item !== null) {
+                <note-shared-item
+                    [noteId]="item._id"
+                    [ownerId]="item.userId"
+                    [title]="item.title"
+                    [content]="item.content"
+                    [shareType]="'recipient'">
+                </note-shared-item>
+            }
+        }
+    }
+</div>

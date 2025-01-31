@@ -1,0 +1,11 @@
+<div class="card">
+    <div class="note-body" [routerLink]="['/note/'+noteId]">
+        <h2>{{ title }}</h2>
+        <div class="card-body">
+            <p>{{ content | summary:30 }}</p>
+        </div>
+    </div>
+    <button [routerLink]="['/note/edit/'+noteId]">Edytuj notatkę</button>
+    <button [routerLink]="['/note/share/'+noteId]">Udostępnij notatkę</button>
+    <button (click)="deleteNote()">Usuń notatkę</button>
+</div>

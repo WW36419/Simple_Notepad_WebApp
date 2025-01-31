@@ -1,0 +1,17 @@
+<div class="card" [routerLink]="['/note/'+noteId]">
+    <h2>{{ title }}</h2>
+
+    @if(shareType === 'owner') {
+        <p style="font-size: smaller;">
+            Wysłano do: 
+            @for (recipient of recipients; track recipient) {
+                {{recipient | username | async}}   
+            }
+        </p>
+    } @else if (shareType === 'recipient') {
+        <p style="font-size: smaller;">Wysłany przez {{ownerId! | username | async}}</p>
+    }
+    <div class="card-body">
+        <p>{{ content | summary:30 }}</p>
+    </div>
+</div>

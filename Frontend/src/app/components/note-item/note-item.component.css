@@ -1,0 +1,22 @@
+.card {
+    float: left;
+    margin: 15px;
+    padding: 20px;
+    width: 30%;
+}
+
+.note-body {
+    height: 150px;
+}
+
+.note-body:hover {
+    cursor: pointer;
+}
+
+h2 {
+    text-align: center;
+}
+
+button {
+    margin: 5px;
+}

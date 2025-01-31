@@ -1,0 +1,10 @@
+<div>
+    @for (item of notes$; track item._id) {
+        <note-item
+            [noteId]="item._id"
+            [title]="item.title"
+            [content]="item.content">
+        </note-item>
+    }
+    <div class="card" [routerLink]="['/notes/add-note']"><h1>+</h1></div>
+</div>
